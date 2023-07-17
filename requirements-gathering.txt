@@ -1,0 +1,78 @@
+Business
+
+Purpose - Connecting food-based businesses with homesteaders, farmers, and/or gardeners.
+
+Revenue stream - 
+
+1. If customers are willing to pay a small fee for compost ingredients.
+Clients/Customers - homesteaders, farmers, and/or gardeners
+
+2. If food-based businesses can reduce garbage bill to get rid of waste another way.
+    - who pays for pickup?
+
+
+Use case: Erin needs more compost for her garden. So I'd like cheap:
+- food scraps
+- lawn clippings
+- leaves
+- coffee grounds
+- paper (work from home, offices)
+
+Other businesses: Landscaping businesses, coffee-shops
+
+--------------------------------------------------------------
+
+Technology:
+
+Screens:
+1. Sign up page 
+            for the CompostUser
+  - I want alerts for CompostProducer within a 10 mile radius.
+  - Easier might be picking out zipcodes.
+            for the CompostProducer
+- I want alters for people willing to pay $5/pound.
+
+3. Search feature
+- SiteUsers can look for Users/Producers
+
+Back-end service:
+1. Algorithm to match Users and producers to send email alerts.
+    -zip codes are an easier Algorithm than distance.
+
+Data Model:
+
+SiteUsers
+- PhysicalAddress (MVP?) - public for producers
+- zipcodes
+- Name
+- email
+- password
+- phonenumber (MVP?) - public for producers
+- bit flag user/producer
+
+CompostUsers
+- Foreign key to SiteUser
+- what type of material they want? (matching algorithm)
+
+CompostProducers
+- Foreign key to SiteUser
+- what type of material are you producing? (matching algorithm)
+
+CompostType
+1 - browns
+2 - gardeners
+
+CompostIngredients
+- FK to CompostType
+- Content (paper, coffee grounds, grass clipings, food scraps)
+
+----------------------------------------------------------------------
+
+What can be done before creating Login/Accounts/using .Net Core Identity model:
+
+1. Sign up as a producer - Add Producer data to a database. (wihout email/password sign up)
+2. Create search page to search by zipcode.
+    2a. Search by surrounding zip codes
+    2b. Search by State
+    2c. Search by City, State   
+        2ci. mile radius search.
