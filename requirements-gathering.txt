@@ -65,3 +65,14 @@ CompostType
 CompostIngredients
 - FK to CompostType
 - Content (paper, coffee grounds, grass clipings, food scraps)
+
+----------------------------------------------------------------------
+
+What can be done before creating Login/Accounts/using .Net Core Identity model:
+
+1. Sign up as a producer - Add Producer data to a database. (wihout email/password sign up)
+2. Create search page to search by zipcode.
+    2a. Search by surrounding zip codes
+    2b. Search by State
+    2c. Search by City, State   
+        2ci. mile radius search.
